@@ -18,3 +18,17 @@
 .setup-steps{padding-left:22px;margin:0;color:#9fb2cc;font-size:11px;line-height:2}.setup-steps li{padding-left:4px;margin:3px 0}.setup-steps strong{color:#d3e4fa}.setup-steps code,.warning-note code{color:#b8d8ff;font-size:10px}.warning-note{margin-top:16px;border-color:#c79d5533;background:#282317}.warning-note svg{color:#e3bd74}
 .next-practical{display:flex;justify-content:space-between;gap:12px}.next-practical button{display:flex;align-items:center;gap:7px;padding:10px 13px;border:1px solid #5d8fc155;border-radius:7px;background:#10233c;color:#b9d8ff;font:600 10px 'DM Sans',sans-serif;cursor:pointer}.next-practical button:hover:not(:disabled){background:#1b3b5e}.next-practical button:disabled{opacity:.35;cursor:not-allowed}
 @media(max-width:760px){.csharp-progress>div{gap:8px;flex-wrap:wrap}.csharp-sidebar{grid-template-columns:1fr 1fr}.csharp-sidebar .sidebar-item{min-height:42px}.csharp-code pre{font-size:10px}.win-preview{width:100%}.win-canvas{height:165px}}
+
+
+/* HTML basic tags practical */
+.webdesign-page .html-attribute-intro{padding:14px 16px;background:#10243b;border:1px solid #294967;border-radius:8px;margin-bottom:14px}
+.webdesign-page .html-attribute-intro code{font:12px ui-monospace,SFMono-Regular,monospace;color:#8edff2}
+.webdesign-page .html-attribute-intro p,.webdesign-page .html-global-note p{font-size:10px;line-height:1.7;color:#9bb0c9;margin:8px 0 0}
+.webdesign-page .html-global-note{margin-top:16px;padding:15px 16px;border-left:3px solid #65cde4;background:#102638;border-radius:0 8px 8px 0}
+.webdesign-page .html-global-note strong{font-size:11px;color:#c9f4ff}
+.webdesign-page .html-global-note code{color:#8edff2}
+.webdesign-page .html-preview-frame{border:1px solid #2a405b;border-radius:9px;overflow:hidden;background:#fff}
+.webdesign-page .html-preview-bar{height:32px;background:#10213a;color:#8ca2c0;display:flex;align-items:center;gap:9px;padding:0 12px;font-size:9px}
+.webdesign-page .html-preview-bar span:first-child{color:#5bd8a4;font-size:12px}
+.webdesign-page .html-preview-frame iframe{display:block;width:100%;height:270px;border:0;background:#fff}
+@media(max-width:760px){.webdesign-page .html-preview-frame iframe{height:230px}}
