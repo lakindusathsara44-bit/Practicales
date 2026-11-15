@@ -1,5 +1,6 @@
 import { NavLink, Route, Routes, Link, useLocation } from "react-router-dom";
 import CSharpPage from "./CSharpPage.jsx";
+import WebDesignPage from "./WebDesignPage.jsx";
 import { ArrowRight, BookOpen, Braces, Code2, GraduationCap, Home, Layers3, MonitorPlay, PanelTop, Sparkles } from "lucide-react";
 
 const practicals = [
@@ -122,5 +123,5 @@ function LessonPage({ practical }) {
 }
 
 export default function App() {
-  return <div className="app"><Header /><Routes><Route path="/" element={<HomePage />} /><Route path="/csharp" element={<CSharpPage />} /><Route path="/web-design" element={<LessonPage practical={practicals[1]} />} /><Route path="*" element={<HomePage />} /></Routes><Footer /></div>;
+  return <div className="app"><Header /><Routes><Route path="/" element={<HomePage />} /><Route path="/csharp" element={<CSharpPage />} /><Route path="/web-design" element={<WebDesignPage />} /><Route path="*" element={<HomePage />} /></Routes><Footer /></div>;
 }
