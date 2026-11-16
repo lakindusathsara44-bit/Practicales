@@ -32,3 +32,23 @@
 .webdesign-page .html-preview-bar span:first-child{color:#5bd8a4;font-size:12px}
 .webdesign-page .html-preview-frame iframe{display:block;width:100%;height:270px;border:0;background:#fff}
 @media(max-width:760px){.webdesign-page .html-preview-frame iframe{height:230px}}
+
+
+/* Additional HTML Frames and Forms practical references */
+.webdesign-page .html-attribute-group{margin-top:18px;padding-top:15px;border-top:1px solid var(--line)}
+.webdesign-page .html-attribute-group:first-of-type{margin-top:8px}
+.webdesign-page .html-attribute-group h3{font:600 12px 'Space Grotesk',sans-serif;color:#b9d8ff;margin:0 0 6px}
+.webdesign-page .html-component-grid,.webdesign-page .html-input-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.webdesign-page .html-component-card,.webdesign-page .html-input-card{min-width:0;padding:13px 14px;border:1px solid var(--line);border-radius:8px;background:#102139}
+.webdesign-page .html-component-card>div{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.webdesign-page .html-component-card code,.webdesign-page .html-input-card code{font:600 11px ui-monospace,SFMono-Regular,monospace;color:#8edff2;overflow-wrap:anywhere}
+.webdesign-page .html-component-card p,.webdesign-page .html-input-card p{font-size:10px;line-height:1.7;color:#9bb0c9;margin:8px 0 0}
+.webdesign-page .html-status{font-size:8px;letter-spacing:.6px;font-weight:700;color:#8ebcff;border:1px solid #5d8fc155;padding:3px 6px;border-radius:5px;white-space:nowrap}
+.webdesign-page .html-input-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.webdesign-page .html-input-card code{font-size:10px}
+@media(max-width:760px){.webdesign-page .html-component-grid,.webdesign-page .html-input-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:430px){.webdesign-page .html-component-grid,.webdesign-page .html-input-grid{grid-template-columns:1fr}}
+
+
+/* C# console practical terminal */
+.console-output{overflow:hidden;border:1px solid var(--line);border-radius:9px;background:#06101e}.console-output pre{min-height:120px;margin:0;padding:20px;color:#b8e8ce;font:12px/1.9 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere}.console-output .code-toolbar{border-bottom:1px solid var(--line)}
