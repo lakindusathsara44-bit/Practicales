@@ -485,7 +485,7 @@ const webLessons = [
       ["style", 'A global attribute for inline CSS, for example style="color: navy;".']
     ],
     note: "Choose heading levels according to document structure, not just their default font size. Usually use one clear <h1> for the main page title and nest sections logically."
-  }
+  },
   {
     "id": "frames",
     "tag": "Frames",
