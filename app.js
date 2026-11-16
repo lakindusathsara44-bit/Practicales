@@ -1141,6 +1141,166 @@ const webLessons = [
   }
 ];
 
+const consoleLessons = [
+  {
+    "id": "hello",
+    "title": "Hello World",
+    "level": "BEGINNER",
+    "goal": "Create and run your first C# console application.",
+    "code": "using System;\n\nnamespace ConsolePractical01\n{\n    internal class Program\n    {\n        static void Main(string[] args)\n        {\n            Console.WriteLine(\"Hello, World!\");\n            Console.WriteLine(\"Welcome to C# Console Applications.\");\n        }\n    }\n}",
+    "explanation": [
+      [
+        "using System;",
+        "Imports the System namespace, which contains the Console class."
+      ],
+      [
+        "static void Main(string[] args)",
+        "The entry point where this console program starts."
+      ],
+      [
+        "Console.WriteLine()",
+        "Displays text and moves the cursor to the next line."
+      ]
+    ],
+    "output": "Hello, World!\\nWelcome to C# Console Applications."
+  },
+  {
+    "id": "variables",
+    "title": "Variables and User Input",
+    "level": "BEGINNER",
+    "goal": "Declare variables, read a name from the keyboard and display a personalised message.",
+    "code": "using System;\n\nnamespace ConsolePractical02\n{\n    internal class Program\n    {\n        static void Main(string[] args)\n        {\n            Console.Write(\"Enter your name: \");\n            string name = Console.ReadLine() ?? \"\";\n            Console.WriteLine($\"Hello, {name}!\");\n        }\n    }\n}",
+    "explanation": [
+      [
+        "Console.Write()",
+        "Displays a prompt without moving to a new line."
+      ],
+      [
+        "string name",
+        "Declares a string variable to store text."
+      ],
+      [
+        "Console.ReadLine()",
+        "Reads a line typed by the user."
+      ],
+      [
+        "$\"Hello, {name}!\"",
+        "String interpolation inserts the variable value into the message."
+      ]
+    ],
+    "output": "Enter your name: Nimal\\nHello, Nimal!"
+  },
+  {
+    "id": "calculator",
+    "title": "Basic Calculator",
+    "level": "BEGINNER",
+    "goal": "Read two numbers, calculate their sum and display the result.",
+    "code": "using System;\n\nnamespace ConsolePractical03\n{\n    internal class Program\n    {\n        static void Main(string[] args)\n        {\n            Console.Write(\"First number: \");\n            double first = Convert.ToDouble(Console.ReadLine());\n            Console.Write(\"Second number: \");\n            double second = Convert.ToDouble(Console.ReadLine());\n\n            double total = first + second;\n            Console.WriteLine($\"Total = {total}\");\n        }\n    }\n}",
+    "explanation": [
+      [
+        "Convert.ToDouble()",
+        "Converts text entered by the user into a double number."
+      ],
+      [
+        "double",
+        "Stores numbers that can contain decimal places."
+      ],
+      [
+        "first + second",
+        "Adds the two numeric values."
+      ],
+      [
+        "Console.WriteLine()",
+        "Displays the calculated total."
+      ]
+    ],
+    "output": "First number: 12\\nSecond number: 8\\nTotal = 20"
+  },
+  {
+    "id": "conditions",
+    "title": "If / Else Decision",
+    "level": "BEGINNER",
+    "goal": "Use an if/else statement to determine whether a number is positive, negative or zero.",
+    "code": "using System;\n\nnamespace ConsolePractical04\n{\n    internal class Program\n    {\n        static void Main(string[] args)\n        {\n            Console.Write(\"Enter a number: \");\n            if (int.TryParse(Console.ReadLine(), out int number))\n            {\n                if (number > 0)\n                    Console.WriteLine(\"Positive number\");\n                else if (number < 0)\n                    Console.WriteLine(\"Negative number\");\n                else\n                    Console.WriteLine(\"Zero\");\n            }\n            else\n            {\n                Console.WriteLine(\"Please enter a valid integer.\");\n            }\n        }\n    }\n}",
+    "explanation": [
+      [
+        "int.TryParse()",
+        "Safely attempts to convert the entered text to an integer."
+      ],
+      [
+        "if",
+        "Runs a block when its condition is true."
+      ],
+      [
+        "else if",
+        "Checks another condition when the earlier condition was false."
+      ],
+      [
+        "else",
+        "Runs when none of the previous conditions matched."
+      ]
+    ],
+    "output": "Enter a number: -5\\nNegative number"
+  },
+  {
+    "id": "loops",
+    "title": "For and While Loops",
+    "level": "BEGINNER",
+    "goal": "Repeat instructions using for and while loops.",
+    "code": "using System;\n\nnamespace ConsolePractical05\n{\n    internal class Program\n    {\n        static void Main(string[] args)\n        {\n            Console.WriteLine(\"For loop:\");\n            for (int i = 1; i <= 5; i++)\n                Console.WriteLine(i);\n\n            Console.WriteLine(\"While loop:\");\n            int count = 1;\n            while (count <= 3)\n            {\n                Console.WriteLine(count);\n                count++;\n            }\n        }\n    }\n}",
+    "explanation": [
+      [
+        "for",
+        "Repeats code while its condition remains true, with initialisation and update in the loop header."
+      ],
+      [
+        "int i = 1",
+        "Initialises the loop counter."
+      ],
+      [
+        "i++",
+        "Increases the counter by one."
+      ],
+      [
+        "while",
+        "Repeats its block while the condition is true."
+      ]
+    ],
+    "output": "For loop:\\n1\\n2\\n3\\n4\\n5\\nWhile loop:\\n1\\n2\\n3"
+  },
+  {
+    "id": "arrays",
+    "title": "Arrays and Methods",
+    "level": "INTERMEDIATE",
+    "goal": "Store multiple values in an array and calculate their sum using a method.",
+    "code": "using System;\n\nnamespace ConsolePractical06\n{\n    internal class Program\n    {\n        static int CalculateTotal(int[] values)\n        {\n            int total = 0;\n            foreach (int value in values)\n                total += value;\n            return total;\n        }\n\n        static void Main(string[] args)\n        {\n            int[] marks = { 75, 80, 90, 65 };\n            int total = CalculateTotal(marks);\n            Console.WriteLine($\"Total marks: {total}\");\n            Console.WriteLine($\"Average: {(double)total / marks.Length}\");\n        }\n    }\n}",
+    "explanation": [
+      [
+        "int[] marks",
+        "Declares an integer array containing several marks."
+      ],
+      [
+        "foreach",
+        "Visits each element in the array."
+      ],
+      [
+        "CalculateTotal()",
+        "A method that receives an array and returns the sum."
+      ],
+      [
+        "return total",
+        "Sends the calculated result back to the calling code."
+      ],
+      [
+        "marks.Length",
+        "Returns the number of elements in the array."
+      ]
+    ],
+    "output": "Total marks: 310\\nAverage: 77.5"
+  }
+];
+let selectedConsole = "hello";
+
 const page = document.getElementById("page");
 let selectedCSharp = "form";
 let selectedWeb = "html";
@@ -1180,6 +1340,7 @@ function renderHome() {
       <div class="section-heading"><div><div class="eyebrow">YOUR LEARNING DASHBOARD</div><h2>Today's practicals</h2><p>Choose a subject to open its practical lesson page.</p></div><span class="date-chip">TODAY <span>•</span> PRACTICALS</span></div>
       <div class="practical-grid">
         <article class="practical-card violet"><div class="card-top"><span class="card-number">PRACTICAL 01</span><span class="card-icon">⌘</span></div><div class="card-content"><h3>C# Visual Application</h3><p>Build Windows-style visual applications and understand the code behind each interface.</p></div><div class="card-bottom"><span>Windows Forms / Visual Application</span><a href="#/csharp" class="circle-link" aria-label="Open C# practicals">→</a></div></article>
+        <article class="practical-card violet"><div class="card-top"><span class="card-number">PRACTICAL 02</span><span class="card-icon">⌨</span></div><div class="card-content"><h3>C# Console Application</h3><p>Practise C# syntax, keyboard input, calculations, conditions, loops, arrays and methods.</p></div><div class="card-bottom"><span>Console App / C#</span><a href="#/csharp-console" class="circle-link" aria-label="Open C# console practicals">→</a></div></article>
         <article class="practical-card cyan"><div class="card-top"><span class="card-number">PRACTICAL 02</span><span class="card-icon">▣</span></div><div class="card-content"><h3>Web Design</h3><p>Learn HTML, CSS and JavaScript by creating and previewing practical web pages.</p></div><div class="card-bottom"><span>HTML · CSS · JavaScript</span><a href="#/web-design" class="circle-link" aria-label="Open Web Design practicals">→</a></div></article>
       </div>
     </section>
@@ -1194,6 +1355,27 @@ function csharpPreview(lesson) {
   if (lesson.id === "combobox") content = '<div class="win-fields"><div class="win-input">HNDIT　⌄</div><button class="win-button">Show Selection</button><strong>Selected course: HNDIT</strong></div>';
   if (lesson.id === "choices") content = '<div class="win-fields win-options"><span>◉ Day　　◯ Weekend</span><span>☑ C#　　☑ Web Design</span><button class="win-button">Show Choices</button><strong>Time: Day | Subjects: C# Web Design</strong></div>';
   return `<div class="win-preview"><div class="win-title">▣ ${titles[lesson.id]} <span>— □ ×</span></div><div class="win-canvas ${content ? "centered" : ""}">${content}</div></div>`;
+}
+function renderCSharpConsole() {
+  const index = Math.max(0, consoleLessons.findIndex((item) => item.id === selectedConsole));
+  const lesson = consoleLessons[index];
+  return breadcrumbs("C# Console Practicals") + `
+    <section class="lesson-hero violet"><div class="lesson-icon">⌨</div><div><div class="eyebrow">C# · CONSOLE APPLICATIONS</div><h1>C# Console Applications</h1><p>Learn the fundamentals of C# through command-line programs, input, calculations, decisions, loops, arrays and methods.</p></div></section>
+    <div class="csharp-progress"><div><strong>Part 02</strong><span>Console application fundamentals</span></div><span class="lesson-count">${consoleLessons.length} PRACTICALS</span></div>
+    <div class="lesson-layout">
+      <aside class="lesson-sidebar csharp-sidebar"><span class="sidebar-label">CONSOLE PRACTICALS</span>
+        ${consoleLessons.map((item,i)=>`<button data-console="${item.id}" class="sidebar-item ${item.id===lesson.id?"selected":""}"><span class="lesson-number">${String(i+1).padStart(2,"0")}</span><span>${escapeHTML(item.title)}</span></button>`).join("")}
+        <div class="sidebar-tip">▤ Select a practical to view the code and expected terminal output.</div>
+      </aside>
+      <div class="lesson-main">
+        <section class="content-panel csharp-topic" id="topic">${panelHeading("01",escapeHTML(lesson.title),lesson.level+" · C# Console")}<p class="practical-goal">${escapeHTML(lesson.goal)}</p><div class="concept-note">▤ <span>Create a C# Console App project in Visual Studio or run <code>dotnet new console</code> in a terminal. Replace the generated Program.cs code with this example.</span></div></section>
+        <section class="content-panel" id="code">${panelHeading("02","Complete source code","Copy this code into Program.cs.")}<div class="code-placeholder csharp-code"><div class="code-toolbar"><span><i></i><i></i><i></i></span><span>Program.cs · C#</span><button class="copy-code" data-copy="console">▣ Copy code</button></div><pre><code id="lesson-code">${escapeHTML(lesson.code)}</code></pre></div></section>
+        <section class="content-panel" id="explanation">${panelHeading("03","How the code works","Understand the important C# statements.")}<div class="code-explanations">${lesson.explanation.map(([term,description],i)=>`<article class="code-explanation"><span>${String(i+1).padStart(2,"0")}</span><div><code>${escapeHTML(term)}</code><p>${escapeHTML(description)}</p></div></article>`).join("")}</div></section>
+        <section class="content-panel" id="output">${panelHeading("04","Expected console output","Illustrative output from a terminal window.")}<div class="console-output"><div class="code-toolbar"><span><i></i><i></i><i></i></span><span>Console · Output</span></div><pre>${escapeHTML(lesson.output)}</pre></div></section>
+        <section class="content-panel setup-panel">${panelHeading("05","How to run this console application","Run the example using Visual Studio or the .NET CLI.")}<ol class="setup-steps"><li>Open Visual Studio and select <strong>Create a new project</strong>.</li><li>Select <strong>Console App</strong> with C#.</li><li>Give the project a name and open <strong>Program.cs</strong>.</li><li>Replace the generated code with the selected example and save.</li><li>Press <strong>Ctrl + F5</strong> or run <code>dotnet run</code> in the project folder.</li></ol><div class="concept-note warning-note">⚠ <span>These examples use the traditional <code>Main()</code> entry-point style. If your project uses top-level statements, replace the generated Program.cs content completely rather than adding a second entry point.</span></div></section>
+        <div class="next-practical"><button data-prev-console ${index===0?"disabled":""}>← Previous practical</button><button data-next-console ${index===consoleLessons.length-1?"disabled":""}>Next practical →</button></div>
+      </div>
+    </div>`;
 }
 function renderCSharp() {
   const index = Math.max(0, csharpLessons.findIndex((item) => item.id === selectedCSharp));
@@ -1244,8 +1426,8 @@ function renderWebDesign() {
 }
 function render() {
   const route = currentRoute();
-  page.className = "page-shell" + (route === "/csharp" || route === "/web-design" ? " lesson-shell" : "") + (route === "/web-design" ? " webdesign-page" : "");
-  page.innerHTML = route === "/csharp" ? renderCSharp() : route === "/web-design" ? renderWebDesign() : renderHome();
+  page.className = "page-shell" + (route === "/csharp" || route === "/csharp-console" || route === "/web-design" ? " lesson-shell" : "") + (route === "/web-design" ? " webdesign-page" : "");
+  page.innerHTML = route === "/csharp" ? renderCSharp() : route === "/csharp-console" ? renderCSharpConsole() : route === "/web-design" ? renderWebDesign() : renderHome();
   document.querySelectorAll("[data-route]").forEach((link) => link.classList.toggle("active", link.dataset.route === route));
   const iframe = document.getElementById("html-live-preview");
   if (iframe) iframe.srcdoc = webLessons.find((item) => item.id === selectedWeb).code.replace(/<!DOCTYPE html>/i, "").trim();
@@ -1253,6 +1435,10 @@ function render() {
 document.addEventListener("click", async (event) => {
   const csharpButton = event.target.closest("[data-csharp]");
   if (csharpButton) { selectedCSharp = csharpButton.dataset.csharp; render(); return; }
+  const consoleButton = event.target.closest("[data-console]");
+  if (consoleButton) { selectedConsole = consoleButton.dataset.console; render(); return; }
+  if (event.target.closest("[data-prev-console]")) { const i = consoleLessons.findIndex((item) => item.id === selectedConsole); selectedConsole = consoleLessons[Math.max(0, i - 1)].id; render(); return; }
+  if (event.target.closest("[data-next-console]")) { const i = consoleLessons.findIndex((item) => item.id === selectedConsole); selectedConsole = consoleLessons[Math.min(consoleLessons.length - 1, i + 1)].id; render(); return; }
   const webButton = event.target.closest("[data-web]");
   if (webButton) { selectedWeb = webButton.dataset.web; render(); return; }
   if (event.target.closest("[data-prev-csharp]")) {
@@ -1267,7 +1453,9 @@ document.addEventListener("click", async (event) => {
   if (copyButton) {
     const source = copyButton.dataset.copy === "csharp"
       ? csharpLessons.find((item) => item.id === selectedCSharp).code
-      : webLessons.find((item) => item.id === selectedWeb).code;
+      : copyButton.dataset.copy === "console"
+        ? consoleLessons.find((item) => item.id === selectedConsole).code
+        : webLessons.find((item) => item.id === selectedWeb).code;
     try {
       await navigator.clipboard.writeText(source);
       copyButton.textContent = "✓ Copied";
