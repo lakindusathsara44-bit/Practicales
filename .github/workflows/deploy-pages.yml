@@ -2,7 +2,7 @@ name: Deploy static Practicales site
 on:
   push:
     branches:
-      - feature/static-html-css-js
+      - main
   workflow_dispatch:
 permissions:
   contents: read
