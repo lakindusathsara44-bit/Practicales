@@ -539,10 +539,6 @@ const webLessons = [
             "Controls which referrer information is sent when fetching the framed resource, for example strict-origin-when-cross-origin."
           ],
           [
-            "align (deprecated)",
-            "Old presentational attribute for aligning a frame. Use CSS such as vertical-align or display rules instead."
-          ],
-          [
             "credentialless",
             "Experimental/limited-support boolean attribute that loads the iframe in a credentialless context. Check browser support before using it."
           ],
