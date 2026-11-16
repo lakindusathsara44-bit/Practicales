@@ -23,3 +23,12 @@ No Node.js, npm, React, Vite or build command is required.
 - `app.js` — lesson data, page rendering, navigation, copy-code actions and previews
 
 The website uses hash-based navigation so it works directly on GitHub Pages without server-side routing.
+
+
+## C# Console Application practicals
+
+The C# Console section contains six guided examples: Hello World, variables and keyboard input, a basic calculator, if/else decisions, loops, and arrays with methods. Create a **Console App** project in Visual Studio and replace `Program.cs` with one example at a time, or run `dotnet run` from the project directory.
+
+## HTML Frames and Forms
+
+The Web Design section includes modern `iframe` usage, historical `frameset` syntax (clearly marked obsolete), HTML form controls, form and input attributes, standard input types, validation, accessibility and security notes. The examples are for learning; server-side validation is still required for real submissions.
