@@ -1,14 +1,27 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#081326" />
-    <meta name="description" content="Practicales — learn through guided C# and Web Design practicals." />
-    <title>Practicales | Learn by doing</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#081326">
+  <meta name="description" content="Practicales — learn through guided C# and Web Design practicals.">
+  <title>Practicales | Learn by doing</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <a href="#/" class="brand"><span class="brand-mark" aria-hidden="true">▱</span><span>practicales<span class="brand-dot">.</span></span></a>
+      <nav class="top-nav" aria-label="Main navigation">
+        <a href="#/" class="nav-link" data-route="/">Home</a>
+        <a href="#/csharp" class="nav-link" data-route="/csharp">C# Practicals</a>
+        <a href="#/web-design" class="nav-link" data-route="/web-design">Web Design Practicals</a>
+      </nav>
+      <div class="top-status"><span class="status-dot"></span> Learning space</div>
+    </header>
+    <main id="page" class="page-shell" aria-live="polite"></main>
+    <footer class="footer"><span>Practicales</span><span>Learn it. Code it. Understand it.</span></footer>
+  </div>
+</body>
 </html>
