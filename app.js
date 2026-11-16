@@ -486,6 +486,608 @@ const webLessons = [
     ],
     note: "Choose heading levels according to document structure, not just their default font size. Usually use one clear <h1> for the main page title and nest sections logically."
   }
+  {
+    "id": "frames",
+    "tag": "Frames",
+    "title": "Frames and Inline Frames",
+    "level": "INTERMEDIATE",
+    "purpose": "Frames divide or embed browsing areas. Modern HTML uses the <iframe> element to embed another page or document. The old <frameset>, <frame> and <noframes> elements belong to obsolete HTML frameset documents and must not be used in new HTML5 pages.",
+    "code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Inline Frame Example</title>\n</head>\n<body>\n  <h1>My Website</h1>\n  <p>The content below is displayed inside an inline frame.</p>\n  <iframe\n    title=\"Sample embedded content\"\n    name=\"sampleFrame\"\n    width=\"600\"\n    height=\"260\"\n    loading=\"lazy\"\n    srcdoc=\"&lt;h2&gt;Welcome to the frame&lt;/h2&gt;&lt;p&gt;This content belongs to a separate embedded document.&lt;/p&gt;\"\n    sandbox=\"allow-forms\"\n    referrerpolicy=\"strict-origin-when-cross-origin\"\n    allow=\"fullscreen\"\n    allowfullscreen>\n  </iframe>\n</body>\n</html>",
+    "attributes": [],
+    "attributeGroups": [
+      {
+        "title": "Modern <iframe> attributes",
+        "items": [
+          [
+            "src",
+            "The URL of the page to embed. Use a trusted URL and remember that some websites prevent being displayed inside frames."
+          ],
+          [
+            "srcdoc",
+            "Supplies HTML markup directly for the embedded document. When both src and srcdoc are present, srcdoc normally takes priority."
+          ],
+          [
+            "name",
+            "Gives the browsing context a name. Links and forms can target this frame by using the same name."
+          ],
+          [
+            "width",
+            "Sets the frame's width in CSS pixels. Use CSS for responsive sizing."
+          ],
+          [
+            "height",
+            "Sets the frame's height in CSS pixels. Use CSS when the layout needs to adapt to screen size."
+          ],
+          [
+            "loading",
+            "Controls loading behaviour: \"eager\" loads immediately; \"lazy\" may defer loading until the frame is near the viewport."
+          ],
+          [
+            "allow",
+            "Applies a Permissions Policy to features available inside the frame, for example allow=\"fullscreen\"."
+          ],
+          [
+            "allowfullscreen",
+            "Boolean attribute that allows the embedded page to request fullscreen display, subject to browser policy."
+          ],
+          [
+            "sandbox",
+            "Applies security restrictions. An empty sandbox is most restrictive; add only the tokens the embedded content genuinely needs, such as allow-forms."
+          ],
+          [
+            "referrerpolicy",
+            "Controls which referrer information is sent when fetching the framed resource, for example strict-origin-when-cross-origin."
+          ],
+          [
+            "credentialless",
+            "Experimental/limited-support boolean attribute that loads the iframe in a credentialless context. Check browser support before using it."
+          ],
+          [
+            "Global attributes",
+            "An iframe also supports applicable global attributes such as id, class, style, title, lang, dir, hidden, tabindex and data-*."
+          ]
+        ]
+      },
+      {
+        "title": "Legacy <frameset> attributes — obsolete",
+        "items": [
+          [
+            "rows",
+            "Splits the browser window into horizontal rows, for example rows=\"25%,75%\"."
+          ],
+          [
+            "cols",
+            "Splits the browser window into vertical columns, for example cols=\"30%,70%\"."
+          ],
+          [
+            "border",
+            "Sets the border thickness between frames in old implementations."
+          ],
+          [
+            "frameborder",
+            "Historically shows or hides frame borders, commonly \"0\" or \"1\"."
+          ],
+          [
+            "framespacing",
+            "Legacy Internet Explorer attribute that controls the spacing between frames."
+          ],
+          [
+            "bordercolor",
+            "Non-standard legacy attribute used by some browsers to colour frame borders."
+          ]
+        ]
+      },
+      {
+        "title": "Legacy <frame> attributes — obsolete",
+        "items": [
+          [
+            "src",
+            "The document URL loaded into that old frame."
+          ],
+          [
+            "name",
+            "Names the frame so links can target it."
+          ],
+          [
+            "scrolling",
+            "Controls scrollbars in older implementations: \"yes\", \"no\" or \"auto\"."
+          ],
+          [
+            "noresize",
+            "Boolean legacy attribute that prevents users from resizing a frame."
+          ],
+          [
+            "marginwidth",
+            "Sets the left and right internal margins in pixels in legacy frames."
+          ],
+          [
+            "marginheight",
+            "Sets the top and bottom internal margins in pixels in legacy frames."
+          ],
+          [
+            "longdesc",
+            "Legacy URL to a longer description of the frame content; not supported as a modern frame feature."
+          ],
+          [
+            "frameborder",
+            "Legacy border visibility setting, commonly \"0\" or \"1\"."
+          ]
+        ]
+      }
+    ],
+    "components": [
+      [
+        "<iframe>",
+        "Modern inline frame. Embeds another HTML page or a self-contained HTML document within the current page.",
+        "CURRENT"
+      ],
+      [
+        "<frameset>",
+        "Legacy container that divided the browser window into rows or columns. Replaced the normal body in frameset documents.",
+        "OBSOLETE"
+      ],
+      [
+        "<frame>",
+        "Legacy child frame placed inside a frameset. It is not a valid element in modern HTML.",
+        "OBSOLETE"
+      ],
+      [
+        "<noframes>",
+        "Legacy fallback content for browsers that could not display framesets. It is not needed for modern iframe use.",
+        "OBSOLETE"
+      ]
+    ],
+    "legacyCode": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Frameset//EN\"\n  \"http://www.w3.org/TR/html4/frameset.dtd\">\n<html>\n<head><title>Old Frameset Example</title></head>\n<frameset cols=\"30%,70%\">\n  <frame src=\"menu.html\" name=\"menuFrame\">\n  <frame src=\"content.html\" name=\"contentFrame\">\n  <noframes>\n    <body>Your browser cannot display this old frameset.</body>\n  </noframes>\n</frameset>\n</html>",
+    "legacyNote": "This frameset example is included for historical study only. The frameset, frame and noframes elements are obsolete and are not supported in HTML5. Use iframe for an embedded document, or use modern CSS layout (Flexbox/Grid) to divide a page into sections.",
+    "globalNote": "Use global attributes such as id, class, style, title, lang, dir, hidden, tabindex and data-* where appropriate. For iframe, always provide a meaningful title and apply sandbox restrictions carefully."
+  },
+  {
+    "id": "forms",
+    "tag": "Form",
+    "title": "HTML Forms and Form Controls",
+    "level": "INTERMEDIATE",
+    "purpose": "An HTML form collects information from users and submits it for processing. Forms are built from controls such as input, textarea, select, button, labels and field groups. Browser validation can check common input rules before submission.",
+    "code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Student Registration Form</title>\n</head>\n<body>\n  <h1>Student Registration</h1>\n  <form id=\"studentForm\" action=\"#\" method=\"get\" autocomplete=\"on\">\n    <fieldset>\n      <legend>Personal details</legend>\n      <label for=\"studentName\">Full name:</label>\n      <input type=\"text\" id=\"studentName\" name=\"studentName\" autocomplete=\"name\" placeholder=\"Enter your name\" minlength=\"2\" maxlength=\"60\" required>\n      <label for=\"studentEmail\">Email:</label>\n      <input type=\"email\" id=\"studentEmail\" name=\"email\" autocomplete=\"email\" placeholder=\"name@example.com\" required>\n      <label for=\"studentAge\">Age:</label>\n      <input type=\"number\" id=\"studentAge\" name=\"age\" min=\"16\" max=\"100\" step=\"1\">\n      <label for=\"studentPhone\">Phone number:</label>\n      <input type=\"tel\" id=\"studentPhone\" name=\"phone\" inputmode=\"numeric\" pattern=\"[0-9]{10}\" placeholder=\"10 digits\">\n    </fieldset>\n    <fieldset>\n      <legend>Course preferences</legend>\n      <label for=\"course\">Course:</label>\n      <select id=\"course\" name=\"course\" required>\n        <option value=\"\">Choose a course</option>\n        <optgroup label=\"Higher National Diplomas\">\n          <option value=\"HNDIT\">HNDIT</option>\n          <option value=\"HNDA\">HNDA</option>\n        </optgroup>\n        <option value=\"HNDE\">HNDE</option>\n      </select>\n      <p>Study mode:</p>\n      <label><input type=\"radio\" name=\"studyMode\" value=\"full-time\" checked> Full time</label>\n      <label><input type=\"radio\" name=\"studyMode\" value=\"part-time\"> Part time</label>\n      <label><input type=\"checkbox\" name=\"newsletter\" value=\"yes\"> Receive updates</label>\n      <label for=\"startDate\">Preferred start date:</label>\n      <input type=\"date\" id=\"startDate\" name=\"startDate\">\n      <label for=\"document\">Supporting document:</label>\n      <input type=\"file\" id=\"document\" name=\"document\" accept=\".pdf,.png,.jpg\" multiple>\n    </fieldset>\n    <label for=\"message\">Additional message:</label>\n    <textarea id=\"message\" name=\"message\" rows=\"4\" cols=\"35\" maxlength=\"300\" placeholder=\"Write a short message\"></textarea>\n    <label for=\"city\">City (suggestions):</label>\n    <input id=\"city\" name=\"city\" list=\"cities\">\n    <datalist id=\"cities\"><option value=\"Colombo\"><option value=\"Kandy\"><option value=\"Kurunegala\"></datalist>\n    <input type=\"hidden\" name=\"formVersion\" value=\"1\">\n    <p>Profile completion: <progress max=\"100\" value=\"75\">75%</progress></p>\n    <p>Readiness: <meter min=\"0\" max=\"100\" low=\"30\" high=\"80\" optimum=\"90\" value=\"85\">85%</meter></p>\n    <output name=\"formStatus\" for=\"studentName\">Ready to submit</output>\n    <button type=\"submit\">Submit form</button>\n    <button type=\"reset\">Clear form</button>\n  </form>\n</body>\n</html>",
+    "attributes": [],
+    "attributeGroups": [
+      {
+        "title": "The <form> element attributes",
+        "items": [
+          [
+            "accept-charset",
+            "Character encodings accepted by the form. UTF-8 is the normal choice: accept-charset=\"UTF-8\"."
+          ],
+          [
+            "action",
+            "URL that receives the submitted form data. Use a real server endpoint in a production website."
+          ],
+          [
+            "autocomplete",
+            "Turns autofill hints on or off for the form: \"on\" or \"off\". Individual controls can also specify their own autocomplete token."
+          ],
+          [
+            "enctype",
+            "Encoding for POST data: application/x-www-form-urlencoded (default), multipart/form-data (file uploads), or text/plain (rarely used)."
+          ],
+          [
+            "method",
+            "Submission method: \"get\" appends data to the URL, \"post\" sends it in the request body, and \"dialog\" closes a dialog form."
+          ],
+          [
+            "name",
+            "Names the form so it can be referenced by scripts or the document."
+          ],
+          [
+            "novalidate",
+            "Boolean attribute that disables the browser's built-in constraint validation when the form is submitted."
+          ],
+          [
+            "rel",
+            "Defines relationship tokens for the destination, such as noopener or noreferrer when applicable."
+          ],
+          [
+            "target",
+            "Browsing context for the response: \"_self\", \"_blank\", \"_parent\", \"_top\", or the name of a frame."
+          ]
+        ]
+      },
+      {
+        "title": "The <input> element attributes",
+        "items": [
+          [
+            "type",
+            "Chooses the input control and its behaviour. See the complete input type list below."
+          ],
+          [
+            "name",
+            "Name used as the key when the control's value is submitted. A disabled or unnamed control is not submitted."
+          ],
+          [
+            "value",
+            "Initial or current value. For submit, reset, button and hidden inputs it defines the submitted or displayed value."
+          ],
+          [
+            "id",
+            "Unique identifier, commonly used by a label's for attribute and by CSS or JavaScript."
+          ],
+          [
+            "autocomplete",
+            "Autofill hint, such as name, email, username, current-password, postal-code or one-time-code."
+          ],
+          [
+            "autofocus",
+            "Boolean attribute requesting focus when the page is loaded. Use sparingly; it can disrupt keyboard and screen-reader users."
+          ],
+          [
+            "disabled",
+            "Boolean attribute that makes the control unavailable and excludes it from form submission."
+          ],
+          [
+            "form",
+            "Associates the input with a form by that form's id, even when the input is outside the form element."
+          ],
+          [
+            "required",
+            "Requires a value before the form can pass browser constraint validation."
+          ],
+          [
+            "readonly",
+            "Prevents the user from editing the value while still allowing it to be submitted. Not supported by every input type."
+          ],
+          [
+            "placeholder",
+            "Short hint shown when the control is empty. Do not use it instead of a visible label."
+          ],
+          [
+            "min",
+            "Minimum permitted numeric or date/time value, for applicable input types."
+          ],
+          [
+            "max",
+            "Maximum permitted numeric or date/time value, for applicable input types."
+          ],
+          [
+            "step",
+            "Allowed increment for number, range and applicable date/time controls; use any for unrestricted decimal steps."
+          ],
+          [
+            "minlength",
+            "Minimum number of characters for supported text-like input types."
+          ],
+          [
+            "maxlength",
+            "Maximum number of characters for supported text-like input types."
+          ],
+          [
+            "pattern",
+            "Regular expression that a supported text-like value must match. Do not include slash delimiters."
+          ],
+          [
+            "size",
+            "Visible character width for supported text-like controls; it does not limit the number of characters."
+          ],
+          [
+            "multiple",
+            "Allows multiple values for supported types, such as email and file."
+          ],
+          [
+            "accept",
+            "File-type hint for file inputs, such as accept=\".pdf,image/*\". It is not a security check."
+          ],
+          [
+            "capture",
+            "Hints whether a file input should use the device camera or microphone where supported."
+          ],
+          [
+            "list",
+            "Connects the input to a datalist by id to offer suggestions."
+          ],
+          [
+            "checked",
+            "Boolean attribute that initially selects a checkbox or radio button."
+          ],
+          [
+            "dirname",
+            "Submits the directionality of the control's text using the named additional form field."
+          ],
+          [
+            "alt",
+            "Alternative text for an image-type input."
+          ],
+          [
+            "src",
+            "Image URL used by an input of type image."
+          ],
+          [
+            "width and height",
+            "Dimensions for an image-type input."
+          ],
+          [
+            "formaction",
+            "Overrides the form action for a submit button or image input."
+          ],
+          [
+            "formenctype",
+            "Overrides the form enctype for a submit button or image input."
+          ],
+          [
+            "formmethod",
+            "Overrides the form method for a submit button or image input."
+          ],
+          [
+            "formnovalidate",
+            "Skips constraint validation for that submit button or image input."
+          ],
+          [
+            "formtarget",
+            "Overrides the form target for that submit button or image input."
+          ]
+        ]
+      },
+      {
+        "title": "Other form elements and their attributes",
+        "items": [
+          [
+            "<label for>",
+            "The for value must match the id of the control it labels. A label can also wrap its control. Labels improve usability and accessibility."
+          ],
+          [
+            "<textarea>",
+            "Common attributes: name, rows, cols, minlength, maxlength, placeholder, required, readonly, disabled, form, dirname, wrap, autocomplete and autofocus."
+          ],
+          [
+            "<button>",
+            "Common attributes: type (submit, reset or button), name, value, disabled, autofocus, form, formaction, formenctype, formmethod, formnovalidate, formtarget, popovertarget and popovertargetaction."
+          ],
+          [
+            "<select>",
+            "Common attributes: name, required, disabled, multiple, size, form, autocomplete and autofocus."
+          ],
+          [
+            "<option>",
+            "Common attributes: value, label, selected and disabled. If value is omitted, option text is used as its value."
+          ],
+          [
+            "<optgroup>",
+            "Common attributes: label and disabled. Groups related options inside a select."
+          ],
+          [
+            "<fieldset>",
+            "Common attributes: name, form and disabled. Groups related controls; disabled fieldsets disable most descendant controls."
+          ],
+          [
+            "<legend>",
+            "Provides a caption for its parent fieldset. It has no commonly used element-specific attributes beyond global attributes."
+          ],
+          [
+            "<datalist>",
+            "Provides suggested values for an input whose list attribute references the datalist id. It has no common element-specific attributes."
+          ],
+          [
+            "<output>",
+            "Common attributes: for (space-separated ids of related controls), form and name."
+          ],
+          [
+            "<progress>",
+            "Attributes: value (current progress) and max (maximum value). Without value, it represents indeterminate progress."
+          ],
+          [
+            "<meter>",
+            "Attributes: value, min, max, low, high and optimum. Represents a measurement within a known range, not task progress."
+          ],
+          [
+            "<object>",
+            "The object element can be associated with a form using its form attribute, but it is not a normal text-entry control."
+          ]
+        ]
+      },
+      {
+        "title": "Validation, accessibility and submission notes",
+        "items": [
+          [
+            "required",
+            "Makes a supported control mandatory."
+          ],
+          [
+            "type=\"email\" / type=\"url\"",
+            "Applies built-in format checks for email addresses and URLs; it does not prove that an address exists."
+          ],
+          [
+            "min / max / step",
+            "Set numeric or date/time boundaries and increments."
+          ],
+          [
+            "minlength / maxlength",
+            "Set minimum and maximum text lengths."
+          ],
+          [
+            "pattern",
+            "Adds a regular-expression constraint to supported text inputs."
+          ],
+          [
+            "disabled vs readonly",
+            "Disabled controls cannot be focused and are not submitted. Readonly controls cannot be edited but are generally submitted."
+          ],
+          [
+            "aria-* and visible labels",
+            "Use accessible names and descriptions. Prefer a real label, fieldset and legend; ARIA supplements rather than replaces them."
+          ],
+          [
+            "Security",
+            "Client-side validation improves usability but can be bypassed. Always validate and safely process submitted data on the server."
+          ]
+        ]
+      }
+    ],
+    "components": [
+      [
+        "<form>",
+        "Container that defines where and how controls submit data.",
+        "CORE"
+      ],
+      [
+        "<input>",
+        "Single-line control. Its type attribute creates text boxes, checkboxes, radio buttons, file pickers, date controls and more.",
+        "CORE"
+      ],
+      [
+        "<textarea>",
+        "Multi-line text entry control.",
+        "CORE"
+      ],
+      [
+        "<button>",
+        "Clickable submit, reset or general-purpose button.",
+        "CORE"
+      ],
+      [
+        "<select>",
+        "Drop-down or list selection control.",
+        "CORE"
+      ],
+      [
+        "<option>",
+        "One selectable choice inside a select or datalist.",
+        "CORE"
+      ],
+      [
+        "<optgroup>",
+        "Labelled group of options inside a select.",
+        "CORE"
+      ],
+      [
+        "<label>",
+        "Accessible text label for a form control.",
+        "CORE"
+      ],
+      [
+        "<fieldset>",
+        "Groups related controls together.",
+        "CORE"
+      ],
+      [
+        "<legend>",
+        "Caption for a fieldset.",
+        "CORE"
+      ],
+      [
+        "<datalist>",
+        "Suggestions associated with an input through its list attribute.",
+        "CORE"
+      ],
+      [
+        "<output>",
+        "Displays the result of a calculation or user action.",
+        "OUTPUT"
+      ],
+      [
+        "<progress>",
+        "Shows the completion progress of a task.",
+        "OUTPUT"
+      ],
+      [
+        "<meter>",
+        "Shows a scalar measurement within a known range.",
+        "OUTPUT"
+      ],
+      [
+        "<object>",
+        "Embeds an external resource and can be associated with a form using its form attribute.",
+        "ADVANCED"
+      ]
+    ],
+    "inputTypes": [
+      [
+        "text",
+        "One-line plain text."
+      ],
+      [
+        "password",
+        "Masked password entry."
+      ],
+      [
+        "email",
+        "Email address; supports email-format validation."
+      ],
+      [
+        "number",
+        "Numeric value with optional min, max and step."
+      ],
+      [
+        "tel",
+        "Telephone number; use pattern or server validation for rules."
+      ],
+      [
+        "url",
+        "Web address with basic URL validation."
+      ],
+      [
+        "search",
+        "Search text field."
+      ],
+      [
+        "date",
+        "Calendar date (year, month and day)."
+      ],
+      [
+        "time",
+        "Time of day."
+      ],
+      [
+        "datetime-local",
+        "Local date and time without a time-zone offset."
+      ],
+      [
+        "month",
+        "Year and month."
+      ],
+      [
+        "week",
+        "Year and week number."
+      ],
+      [
+        "color",
+        "Colour picker."
+      ],
+      [
+        "range",
+        "Slider for a numeric range."
+      ],
+      [
+        "checkbox",
+        "Independent on/off option; multiple checkboxes may be selected."
+      ],
+      [
+        "radio",
+        "One choice from a group sharing the same name."
+      ],
+      [
+        "file",
+        "File picker; combine with accept and multiple where appropriate."
+      ],
+      [
+        "hidden",
+        "Hidden value submitted with the form; never use it for secrets."
+      ],
+      [
+        "submit",
+        "Submits the form."
+      ],
+      [
+        "image",
+        "Image-based submit control; uses src, alt, width and height."
+      ],
+      [
+        "reset",
+        "Restores controls to their initial values."
+      ],
+      [
+        "button",
+        "General-purpose input button; script behaviour must be added separately."
+      ]
+    ],
+    "globalNote": "Form controls also use applicable global attributes such as id, class, style, title, lang, dir, hidden, tabindex, accesskey, contenteditable and data-*. For accessibility, connect every control to a visible label, group related controls with fieldset and legend, and provide clear validation messages."
+  }
 ];
 
 const page = document.getElementById("page");
@@ -567,20 +1169,25 @@ function renderWebDesign() {
   const index = Math.max(0, webLessons.findIndex((item) => item.id === selectedWeb));
   const lesson = webLessons[index];
   const preview = lesson.code.replace(/<!DOCTYPE html>/i, "").trim();
+  const outputNumber = String(4 + Number(Boolean(lesson.components)) + Number(Boolean(lesson.inputTypes)) + Number(Boolean(lesson.legacyCode))).padStart(2, "0");
+  const setupNumber = String(Number(outputNumber) + 1).padStart(2, "0");
   return breadcrumbs("Web Design Practicals") + `
-    <section class="lesson-hero cyan"><div class="lesson-icon">◎</div><div><div class="eyebrow">HTML · WEB DESIGN FUNDAMENTALS</div><h1>HTML Basic Tags</h1><p>Learn the structure of an HTML document, common elements and the attributes used with them.</p></div></section>
-    <div class="csharp-progress"><div><strong>Part 01</strong><span>HTML document structure and basic text elements</span></div><span class="lesson-count">6 TOPICS</span></div>
+    <section class="lesson-hero cyan"><div class="lesson-icon">◎</div><div><div class="eyebrow">HTML · WEB DESIGN FUNDAMENTALS</div><h1>HTML Fundamentals</h1><p>Learn HTML structure, elements, frames, forms and the attributes that make them work.</p></div></section>
+    <div class="csharp-progress"><div><strong>Part 01</strong><span>HTML structure, text, frames and forms</span></div><span class="lesson-count">${webLessons.length} TOPICS</span></div>
     <div class="lesson-layout">
-      <aside class="lesson-sidebar csharp-sidebar"><span class="sidebar-label">HTML TAGS</span>
+      <aside class="lesson-sidebar csharp-sidebar"><span class="sidebar-label">HTML TOPICS</span>
         ${webLessons.map((item, i) => `<button data-web="${item.id}" class="sidebar-item ${item.id === lesson.id ? "selected" : ""}"><span class="lesson-number">${String(i+1).padStart(2,"0")}</span><span>${escapeHTML(item.tag)}</span></button>`).join("")}
-        <div class="sidebar-tip">▤ Select a tag to study its purpose, code, attributes and browser output.</div>
+        <div class="sidebar-tip">▤ Select a topic to study its purpose, components, attributes and browser output.</div>
       </aside>
       <div class="lesson-main">
         <section class="content-panel csharp-topic" id="topic">${panelHeading("01",escapeHTML(lesson.title),lesson.level+" · HTML")}<p class="practical-goal">${escapeHTML(lesson.purpose)}</p><div class="concept-note">ⓘ <span>${escapeHTML(lesson.note)}</span></div></section>
         <section class="content-panel" id="code">${panelHeading("02","HTML source code","A complete HTML5 example. Copy it and save it as index.html.")}<div class="code-placeholder csharp-code"><div class="code-toolbar"><span><i></i><i></i><i></i></span><span>index.html · HTML5</span><button class="copy-code" data-copy="web">▣ Copy code</button></div><pre><code id="lesson-code">${escapeHTML(lesson.code)}</code></pre></div></section>
-        <section class="content-panel" id="explanation">${panelHeading("03","Attributes","Attributes provide extra information or settings for an HTML element.")}<div class="html-attribute-intro"><code>&lt;element attribute="value"&gt;Content&lt;/element&gt;</code><p>Write attributes inside the opening tag. Most attribute values should be placed inside quotation marks.</p></div><div class="code-explanations">${lesson.attributes.map(([term, description], i) => `<article class="code-explanation"><span>${String(i+1).padStart(2,"0")}</span><div><code>${escapeHTML(term)}</code><p>${escapeHTML(description)}</p></div></article>`).join("")}</div><div class="html-global-note"><strong>Remember — common global attributes</strong><p>These can be used on most HTML elements: <code>id</code>, <code>class</code>, <code>style</code>, <code>title</code>, <code>lang</code>, <code>dir</code>, <code>hidden</code>, <code>tabindex</code> and <code>data-*</code>. Not every element accepts every attribute; use valid attributes for the element.</p></div></section>
-        <section class="content-panel" id="output">${panelHeading("04","Live output preview","This preview renders the HTML example in a browser-like frame.")}<div class="win-output-label"><span>▣ BROWSER OUTPUT</span><span>◉ Live HTML preview</span></div><div class="html-preview-frame"><div class="html-preview-bar"><span>●</span><span>Local preview · ${lesson.id}.html</span></div><iframe id="html-live-preview" title="${escapeHTML(lesson.title)} output preview" sandbox=""></iframe></div></section>
-        <section class="content-panel setup-panel">${panelHeading("05","How to run this HTML file","Try the practical on your Windows 11 laptop.")}<ol class="setup-steps"><li>Open Notepad or Visual Studio Code.</li><li>Copy the HTML source code above and paste it into a new file.</li><li>Save the file with the name <code>index.html</code>. Make sure it is not saved as <code>index.html.txt</code>.</li><li>Double-click <code>index.html</code> or open it with Chrome, Edge or Firefox.</li><li>Change the text or attributes, save the file and refresh the browser to see your changes.</li></ol></section>
+        <section class="content-panel" id="explanation">${panelHeading("03","Attributes","Attributes provide extra information or settings for an HTML element.")}<div class="html-attribute-intro"><code>&lt;element attribute="value"&gt;Content&lt;/element&gt;</code><p>Write attributes inside the opening tag. Most attribute values should be placed inside quotation marks.</p></div>${lesson.attributeGroups ? lesson.attributeGroups.map((group) => `<div class="html-attribute-group"><h3>${escapeHTML(group.title)}</h3><div class="code-explanations">${group.items.map(([term, description], i) => `<article class="code-explanation"><span>${String(i+1).padStart(2,"0")}</span><div><code>${escapeHTML(term)}</code><p>${escapeHTML(description)}</p></div></article>`).join("")}</div></div>`).join("") : `<div class="code-explanations">${lesson.attributes.map(([term, description], i) => `<article class="code-explanation"><span>${String(i+1).padStart(2,"0")}</span><div><code>${escapeHTML(term)}</code><p>${escapeHTML(description)}</p></div></article>`).join("")}</div>`}<div class="html-global-note"><strong>Remember — common global attributes</strong><p>These can be used on most HTML elements: <code>id</code>, <code>class</code>, <code>style</code>, <code>title</code>, <code>lang</code>, <code>dir</code>, <code>hidden</code>, <code>tabindex</code> and <code>data-*</code>. Not every element accepts every attribute; use valid attributes for the element.</p></div></section>
+        ${lesson.components ? `<section class="content-panel" id="components">${panelHeading("04","HTML components and elements","The elements included in this topic and what each one does.")}<div class="html-component-grid">${lesson.components.map(([tag, description, status]) => `<article class="html-component-card"><div><code>${escapeHTML(tag)}</code>${status ? `<span class="html-status">${escapeHTML(status)}</span>` : ""}</div><p>${escapeHTML(description)}</p></article>`).join("")}</div></section>` : ""}
+        ${lesson.inputTypes ? `<section class="content-panel" id="input-types">${panelHeading("05","All input types","The complete set of standard input type values for the HTML input element.")}<div class="html-input-grid">${lesson.inputTypes.map(([type, description]) => `<article class="html-input-card"><code>type="${escapeHTML(type)}"</code><p>${escapeHTML(description)}</p></article>`).join("")}</div></section>` : ""}
+        ${lesson.legacyCode ? `<section class="content-panel" id="legacy-frames">${panelHeading("05","Old frameset syntax","Historical HTML 4 example — study only, do not use in modern projects.")}<div class="code-placeholder csharp-code"><div class="code-toolbar"><span><i></i><i></i><i></i></span><span>legacy-frames.html · HTML 4</span></div><pre><code>${escapeHTML(lesson.legacyCode)}</code></pre></div><div class="concept-note warning-note">⚠ <span>${escapeHTML(lesson.legacyNote)}</span></div></section>` : ""}
+        <section class="content-panel" id="output">${panelHeading(outputNumber,"Live output preview","This preview renders the HTML example in a browser-like frame.")}<div class="win-output-label"><span>▣ BROWSER OUTPUT</span><span>◉ Live HTML preview</span></div><div class="html-preview-frame"><div class="html-preview-bar"><span>●</span><span>Local preview · ${lesson.id}.html</span></div><iframe id="html-live-preview" title="${escapeHTML(lesson.title)} output preview" sandbox="${lesson.id === "forms" ? "allow-forms" : ""}"></iframe></div></section>
+        <section class="content-panel setup-panel">${panelHeading(setupNumber,"How to run this HTML file","Try the practical on your Windows 11 laptop.")}<ol class="setup-steps"><li>Open Notepad or Visual Studio Code.</li><li>Copy the HTML source code above and paste it into a new file.</li><li>Save the file with the name <code>index.html</code>. Make sure it is not saved as <code>index.html.txt</code>.</li><li>Double-click <code>index.html</code> or open it with Chrome, Edge or Firefox.</li><li>Change the text or attributes, save the file and refresh the browser to see your changes.</li></ol></section>
       </div>
     </div>`;
 }
