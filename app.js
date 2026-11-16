@@ -569,6 +569,16 @@ const webLessons = [
         ]
       },
       {
+        "title": "Deprecated <iframe> attributes — obsolete",
+        "items": [
+          ["align", "Old presentational alignment attribute. Use CSS instead."],
+          ["frameborder", "Old border switch for an iframe. Use the CSS border property instead."],
+          ["longdesc", "Old URL to a long description of frame content; it was poorly supported and is deprecated."],
+          ["marginheight and marginwidth", "Old iframe inner margin settings in pixels. Use CSS instead."],
+          ["scrolling", "Old scrollbar setting with values such as auto, yes or no. Use normal scrolling behaviour and CSS instead."]
+        ]
+      },
+      {
         "title": "Legacy <frameset> attributes — obsolete",
         "items": [
           [
@@ -845,15 +855,31 @@ const webLessons = [
           [
             "formtarget",
             "Overrides the form target for that submit button or image input."
-          ]
+          ],
+          ["alpha", "Experimental/modern color-input attribute that lets users set opacity as well as the color value; browser support varies."],
+          ["colorspace", "Attribute for color inputs that selects a color space such as limited-srgb or display-p3."],
+          ["switch", "Experimental checkbox attribute requesting switch-style rendering where supported."],
+          ["popovertarget", "For input type=button, identifies the popover element controlled by this button."],
+          ["popovertargetaction", "For input type=button, selects the popover action: show, hide or toggle."],
+          ["autocapitalize", "Global/input attribute controlling automatic capitalization of entered text."]
+        ]
+      },
+      {
+        "title": "Non-standard input attributes — avoid when possible",
+        "items": [
+          ["webkitdirectory", "Browser-supported file-input attribute that lets users select a directory instead of individual files."],
+          ["incremental", "WebKit/Blink-only search input extension that can emit search events while the user types."],
+          ["mozactionhint", "Deprecated Mozilla-specific virtual-keyboard hint; use the standard enterkeyhint global attribute instead."],
+          ["orient", "Non-standard Firefox range-input attribute for slider orientation. Prefer modern CSS techniques."],
+          ["results", "Non-standard Safari search-history suggestion count."]
         ]
       },
       {
         "title": "Other form elements and their attributes",
         "items": [
           [
-            "<label for>",
-            "The for value must match the id of the control it labels. A label can also wrap its control. Labels improve usability and accessibility."
+            "<label>",
+            "Attributes: for (must match a control id) and form (associates the label with a form by id), plus global attributes. A label can also wrap its control."
           ],
           [
             "<textarea>",
@@ -861,7 +887,7 @@ const webLessons = [
           ],
           [
             "<button>",
-            "Common attributes: type (submit, reset or button), name, value, disabled, autofocus, form, formaction, formenctype, formmethod, formnovalidate, formtarget, popovertarget and popovertargetaction."
+            "Attributes: autofocus, command, commandfor, disabled, form, formaction, formenctype, formmethod, formnovalidate, formtarget, name, popovertarget, popovertargetaction, type and value. command and commandfor depend on newer browser support."
           ],
           [
             "<select>",
@@ -901,7 +927,7 @@ const webLessons = [
           ],
           [
             "<object>",
-            "The object element can be associated with a form using its form attribute, but it is not a normal text-entry control."
+            "Attributes: data, form, height, name, type, typemustmatch, usemap and width, plus global attributes. It embeds an external resource and can be form-associated."
           ]
         ]
       },
