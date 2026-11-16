@@ -539,8 +539,28 @@ const webLessons = [
             "Controls which referrer information is sent when fetching the framed resource, for example strict-origin-when-cross-origin."
           ],
           [
+            "align (deprecated)",
+            "Old presentational attribute for aligning a frame. Use CSS such as vertical-align or display rules instead."
+          ],
+          [
             "credentialless",
             "Experimental/limited-support boolean attribute that loads the iframe in a credentialless context. Check browser support before using it."
+          ],
+          [
+            "browsingtopics",
+            "Experimental privacy-related boolean attribute; support and behaviour can change, so check current browser compatibility before using it."
+          ],
+          [
+            "csp",
+            "Experimental attribute that applies a Content Security Policy to the embedded document where supported."
+          ],
+          [
+            "privateToken",
+            "Experimental/limited-support attribute for a Private State Token request. Check browser support and current specifications before using it."
+          ],
+          [
+            "allowpaymentrequest",
+            "Deprecated legacy boolean attribute that allowed the Payment Request API in an iframe. Do not use it in new pages."
           ],
           [
             "Global attributes",
@@ -655,7 +675,11 @@ const webLessons = [
         "items": [
           [
             "accept-charset",
-            "Character encodings accepted by the form. UTF-8 is the normal choice: accept-charset=\"UTF-8\"."
+            "Character encoding accepted by the form. Modern HTML requires UTF-8: accept-charset=\"UTF-8\"."
+          ],
+          [
+            "accept (obsolete)",
+            "Deprecated legacy attribute that attempted to specify accepted content types. Do not use it on form; configure accept on file inputs instead."
           ],
           [
             "action",
@@ -994,6 +1018,11 @@ const webLessons = [
         "<object>",
         "Embeds an external resource and can be associated with a form using its form attribute.",
         "ADVANCED"
+      ],
+      [
+        "<selectedcontent>",
+        "Special element used by customizable select controls to display selected option content in a button-based select interface. Browser support and usage are evolving.",
+        "ADVANCED"
       ]
     ],
     "inputTypes": [
@@ -1086,7 +1115,7 @@ const webLessons = [
         "General-purpose input button; script behaviour must be added separately."
       ]
     ],
-    "globalNote": "Form controls also use applicable global attributes such as id, class, style, title, lang, dir, hidden, tabindex, accesskey, contenteditable and data-*. For accessibility, connect every control to a visible label, group related controls with fieldset and legend, and provide clear validation messages."
+    "globalNote": "Form controls also use common global attributes such as accesskey, autocapitalize, class, contenteditable, data-*, dir, draggable, enterkeyhint, hidden, id, inert, inputmode, lang, nonce, popover, role, spellcheck, style, tabindex, title and translate where applicable. For accessibility, connect every control to a visible label, group related controls with fieldset and legend, and provide clear validation messages."
   }
 ];
 
@@ -1180,9 +1209,9 @@ function renderWebDesign() {
         <div class="sidebar-tip">▤ Select a topic to study its purpose, components, attributes and browser output.</div>
       </aside>
       <div class="lesson-main">
-        <section class="content-panel csharp-topic" id="topic">${panelHeading("01",escapeHTML(lesson.title),lesson.level+" · HTML")}<p class="practical-goal">${escapeHTML(lesson.purpose)}</p><div class="concept-note">ⓘ <span>${escapeHTML(lesson.note)}</span></div></section>
+        <section class="content-panel csharp-topic" id="topic">${panelHeading("01",escapeHTML(lesson.title),lesson.level+" · HTML")}<p class="practical-goal">${escapeHTML(lesson.purpose)}</p><div class="concept-note">ⓘ <span>${escapeHTML(lesson.note || lesson.globalNote || "")}</span></div></section>
         <section class="content-panel" id="code">${panelHeading("02","HTML source code","A complete HTML5 example. Copy it and save it as index.html.")}<div class="code-placeholder csharp-code"><div class="code-toolbar"><span><i></i><i></i><i></i></span><span>index.html · HTML5</span><button class="copy-code" data-copy="web">▣ Copy code</button></div><pre><code id="lesson-code">${escapeHTML(lesson.code)}</code></pre></div></section>
-        <section class="content-panel" id="explanation">${panelHeading("03","Attributes","Attributes provide extra information or settings for an HTML element.")}<div class="html-attribute-intro"><code>&lt;element attribute="value"&gt;Content&lt;/element&gt;</code><p>Write attributes inside the opening tag. Most attribute values should be placed inside quotation marks.</p></div>${lesson.attributeGroups ? lesson.attributeGroups.map((group) => `<div class="html-attribute-group"><h3>${escapeHTML(group.title)}</h3><div class="code-explanations">${group.items.map(([term, description], i) => `<article class="code-explanation"><span>${String(i+1).padStart(2,"0")}</span><div><code>${escapeHTML(term)}</code><p>${escapeHTML(description)}</p></div></article>`).join("")}</div></div>`).join("") : `<div class="code-explanations">${lesson.attributes.map(([term, description], i) => `<article class="code-explanation"><span>${String(i+1).padStart(2,"0")}</span><div><code>${escapeHTML(term)}</code><p>${escapeHTML(description)}</p></div></article>`).join("")}</div>`}<div class="html-global-note"><strong>Remember — common global attributes</strong><p>These can be used on most HTML elements: <code>id</code>, <code>class</code>, <code>style</code>, <code>title</code>, <code>lang</code>, <code>dir</code>, <code>hidden</code>, <code>tabindex</code> and <code>data-*</code>. Not every element accepts every attribute; use valid attributes for the element.</p></div></section>
+        <section class="content-panel" id="explanation">${panelHeading("03","Attributes","Attributes provide extra information or settings for an HTML element.")}<div class="html-attribute-intro"><code>&lt;element attribute="value"&gt;Content&lt;/element&gt;</code><p>Write attributes inside the opening tag. Most attribute values should be placed inside quotation marks.</p></div>${lesson.attributeGroups ? lesson.attributeGroups.map((group) => `<div class="html-attribute-group"><h3>${escapeHTML(group.title)}</h3><div class="code-explanations">${group.items.map(([term, description], i) => `<article class="code-explanation"><span>${String(i+1).padStart(2,"0")}</span><div><code>${escapeHTML(term)}</code><p>${escapeHTML(description)}</p></div></article>`).join("")}</div></div>`).join("") : `<div class="code-explanations">${lesson.attributes.map(([term, description], i) => `<article class="code-explanation"><span>${String(i+1).padStart(2,"0")}</span><div><code>${escapeHTML(term)}</code><p>${escapeHTML(description)}</p></div></article>`).join("")}</div>`}<div class="html-global-note"><strong>Remember — common global attributes</strong><p>${escapeHTML(lesson.globalNote || "Common global attributes include id, class, style, title, lang, dir, hidden, tabindex and data-*. Not every attribute applies meaningfully to every element.")}</p></div></section>
         ${lesson.components ? `<section class="content-panel" id="components">${panelHeading("04","HTML components and elements","The elements included in this topic and what each one does.")}<div class="html-component-grid">${lesson.components.map(([tag, description, status]) => `<article class="html-component-card"><div><code>${escapeHTML(tag)}</code>${status ? `<span class="html-status">${escapeHTML(status)}</span>` : ""}</div><p>${escapeHTML(description)}</p></article>`).join("")}</div></section>` : ""}
         ${lesson.inputTypes ? `<section class="content-panel" id="input-types">${panelHeading("05","All input types","The complete set of standard input type values for the HTML input element.")}<div class="html-input-grid">${lesson.inputTypes.map(([type, description]) => `<article class="html-input-card"><code>type="${escapeHTML(type)}"</code><p>${escapeHTML(description)}</p></article>`).join("")}</div></section>` : ""}
         ${lesson.legacyCode ? `<section class="content-panel" id="legacy-frames">${panelHeading("05","Old frameset syntax","Historical HTML 4 example — study only, do not use in modern projects.")}<div class="code-placeholder csharp-code"><div class="code-toolbar"><span><i></i><i></i><i></i></span><span>legacy-frames.html · HTML 4</span></div><pre><code>${escapeHTML(lesson.legacyCode)}</code></pre></div><div class="concept-note warning-note">⚠ <span>${escapeHTML(lesson.legacyNote)}</span></div></section>` : ""}
@@ -1193,7 +1222,7 @@ function renderWebDesign() {
 }
 function render() {
   const route = currentRoute();
-  page.className = "page-shell" + (route === "/csharp" || route === "/web-design" ? " lesson-shell" : "");
+  page.className = "page-shell" + (route === "/csharp" || route === "/web-design" ? " lesson-shell" : "") + (route === "/web-design" ? " webdesign-page" : "");
   page.innerHTML = route === "/csharp" ? renderCSharp() : route === "/web-design" ? renderWebDesign() : renderHome();
   document.querySelectorAll("[data-route]").forEach((link) => link.classList.toggle("active", link.dataset.route === route));
   const iframe = document.getElementById("html-live-preview");
