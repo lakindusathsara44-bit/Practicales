@@ -200,7 +200,7 @@ namespace WinFormsPractical04
     }
 }`,
     explanation: [
-      ["double.TryParse(first.Text, out double a)", "Tries to convert the first TextBox value into a number. It avoids a conversion exception if the input is invalid."],
+      ["double.TryParse(first.Text, out a)", "Tries to convert the first TextBox value into a number. The variable is declared before the TryParse call; invalid input returns false instead of throwing a conversion exception."],
       ["&&", "Means AND. Both values must be valid numbers for the calculation to run."],
       ["a + b", "Adds the two numeric values."],
       ['result.Text = "Answer: " + (a + b);', "Displays the calculated total in the result label."],
