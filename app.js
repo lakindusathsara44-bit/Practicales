@@ -4,7 +4,7 @@ const csharpLessons = [
     id: "form",
     title: "Create a Windows Form",
     level: "BEGINNER",
-    goal: "Create a basic Windows Forms window and set its title, size and start position.",
+    goal: "Create a basic Windows Forms window and set its title, size and start position. These examples target Visual Studio 2010, C# 4.0 and .NET Framework 4.0. Use a .NET Framework 4.0 Windows Forms or Console Application project. The code avoids features introduced after C# 4.0.",
     code: `using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -175,8 +175,10 @@ namespace WinFormsPractical04
 
             add.Click += (sender, e) =>
             {
-                if (double.TryParse(first.Text, out double a) &&
-                    double.TryParse(second.Text, out double b))
+                double a;
+                double b;
+                if (double.TryParse(first.Text, out a) &&
+                    double.TryParse(second.Text, out b))
                 {
                     result.Text = "Answer: " + (a + b);
                 }
@@ -1146,7 +1148,7 @@ const consoleLessons = [
     "id": "hello",
     "title": "Hello World",
     "level": "BEGINNER",
-    "goal": "Create and run your first C# console application.",
+    "goal": "Create and run your first C# console application. These examples target Visual Studio 2010, C# 4.0 and .NET Framework 4.0. Use a .NET Framework 4.0 Windows Forms or Console Application project. The code avoids features introduced after C# 4.0.",
     "code": "using System;\n\nnamespace ConsolePractical01\n{\n    internal class Program\n    {\n        static void Main(string[] args)\n        {\n            Console.WriteLine(\"Hello, World!\");\n            Console.WriteLine(\"Welcome to C# Console Applications.\");\n        }\n    }\n}",
     "explanation": [
       [
@@ -1169,7 +1171,7 @@ const consoleLessons = [
     "title": "Variables and User Input",
     "level": "BEGINNER",
     "goal": "Declare variables, read a name from the keyboard and display a personalised message.",
-    "code": "using System;\n\nnamespace ConsolePractical02\n{\n    internal class Program\n    {\n        static void Main(string[] args)\n        {\n            Console.Write(\"Enter your name: \");\n            string name = Console.ReadLine() ?? \"\";\n            Console.WriteLine($\"Hello, {name}!\");\n        }\n    }\n}",
+    "code": "using System;\n\nnamespace ConsolePractical02\n{\n    internal class Program\n    {\n        static void Main(string[] args)\n        {\n            Console.Write(\"Enter your name: \");\n            string name = Console.ReadLine() ?? \"\";\n            Console.WriteLine(\"Hello, \" + name + \"!\");\n        }\n    }\n}",
     "explanation": [
       [
         "Console.Write()",
@@ -1184,8 +1186,8 @@ const consoleLessons = [
         "Reads a line typed by the user."
       ],
       [
-        "$\"Hello, {name}!\"",
-        "String interpolation inserts the variable value into the message."
+        "\"Hello, \" + name + \"!\"",
+        "String concatenation joins the greeting text and the name."
       ]
     ],
     "output": "Enter your name: Nimal\\nHello, Nimal!"
@@ -1195,7 +1197,7 @@ const consoleLessons = [
     "title": "Basic Calculator",
     "level": "BEGINNER",
     "goal": "Read two numbers, calculate their sum and display the result.",
-    "code": "using System;\n\nnamespace ConsolePractical03\n{\n    internal class Program\n    {\n        static void Main(string[] args)\n        {\n            Console.Write(\"First number: \");\n            double first = Convert.ToDouble(Console.ReadLine());\n            Console.Write(\"Second number: \");\n            double second = Convert.ToDouble(Console.ReadLine());\n\n            double total = first + second;\n            Console.WriteLine($\"Total = {total}\");\n        }\n    }\n}",
+    "code": "using System;\n\nnamespace ConsolePractical03\n{\n    internal class Program\n    {\n        static void Main(string[] args)\n        {\n            Console.Write(\"First number: \");\n            double first = Convert.ToDouble(Console.ReadLine());\n            Console.Write(\"Second number: \");\n            double second = Convert.ToDouble(Console.ReadLine());\n\n            double total = first + second;\n            Console.WriteLine(\"Total = \" + total);\n        }\n    }\n}",
     "explanation": [
       [
         "Convert.ToDouble()",
@@ -1221,11 +1223,11 @@ const consoleLessons = [
     "title": "If / Else Decision",
     "level": "BEGINNER",
     "goal": "Use an if/else statement to determine whether a number is positive, negative or zero.",
-    "code": "using System;\n\nnamespace ConsolePractical04\n{\n    internal class Program\n    {\n        static void Main(string[] args)\n        {\n            Console.Write(\"Enter a number: \");\n            if (int.TryParse(Console.ReadLine(), out int number))\n            {\n                if (number > 0)\n                    Console.WriteLine(\"Positive number\");\n                else if (number < 0)\n                    Console.WriteLine(\"Negative number\");\n                else\n                    Console.WriteLine(\"Zero\");\n            }\n            else\n            {\n                Console.WriteLine(\"Please enter a valid integer.\");\n            }\n        }\n    }\n}",
+    "code": "using System;\n\nnamespace ConsolePractical04\n{\n    internal class Program\n    {\n        static void Main(string[] args)\n        {\n            Console.Write(\"Enter a number: \");\n            int number;\n            if (int.TryParse(Console.ReadLine(), out number))\n            {\n                if (number > 0)\n                    Console.WriteLine(\"Positive number\");\n                else if (number < 0)\n                    Console.WriteLine(\"Negative number\");\n                else\n                    Console.WriteLine(\"Zero\");\n            }\n            else\n            {\n                Console.WriteLine(\"Please enter a valid integer.\");\n            }\n        }\n    }\n}",
     "explanation": [
       [
         "int.TryParse()",
-        "Safely attempts to convert the entered text to an integer."
+        "Safely attempts to convert the entered text to an integer using a variable declared before the TryParse call."
       ],
       [
         "if",
@@ -1273,7 +1275,7 @@ const consoleLessons = [
     "title": "Arrays and Methods",
     "level": "INTERMEDIATE",
     "goal": "Store multiple values in an array and calculate their sum using a method.",
-    "code": "using System;\n\nnamespace ConsolePractical06\n{\n    internal class Program\n    {\n        static int CalculateTotal(int[] values)\n        {\n            int total = 0;\n            foreach (int value in values)\n                total += value;\n            return total;\n        }\n\n        static void Main(string[] args)\n        {\n            int[] marks = { 75, 80, 90, 65 };\n            int total = CalculateTotal(marks);\n            Console.WriteLine($\"Total marks: {total}\");\n            Console.WriteLine($\"Average: {(double)total / marks.Length}\");\n        }\n    }\n}",
+    "code": "using System;\n\nnamespace ConsolePractical06\n{\n    internal class Program\n    {\n        static int CalculateTotal(int[] values)\n        {\n            int total = 0;\n            foreach (int value in values)\n                total += value;\n            return total;\n        }\n\n        static void Main(string[] args)\n        {\n            int[] marks = { 75, 80, 90, 65 };\n            int total = CalculateTotal(marks);\n            Console.WriteLine(\"Total marks: \" + total);\n            Console.WriteLine(\"Average: \" + ((double)total / marks.Length));\n        }\n    }\n}",
     "explanation": [
       [
         "int[] marks",
@@ -1299,8 +1301,6 @@ const consoleLessons = [
     "output": "Total marks: 310\\nAverage: 77.5"
   }
 ];
-let selectedConsole = "hello";
-
 const page = document.getElementById("page");
 let selectedCSharp = "form";
 let selectedWeb = "html";
