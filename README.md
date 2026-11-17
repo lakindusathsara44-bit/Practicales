@@ -32,3 +32,10 @@ The C# Console section contains six guided examples: Hello World, variables and 
 ## HTML Frames and Forms
 
 The Web Design section includes modern `iframe` usage, historical `frameset` syntax (clearly marked obsolete), HTML form controls, form and input attributes, standard input types, validation, accessibility and security notes. The examples are for learning; server-side validation is still required for real submissions.
+
+
+## Visual Studio 2010 / C# 4.0 projects
+
+Open `CSharp/Practicals-Visual-Studio-2010.sln` in Visual Studio 2010. It contains 12 independent projects: six Windows Forms practicals and six Console Application practicals. Each project uses the Visual Studio 2010 MSBuild project format, targets **.NET Framework 4.0**, and uses **C# 4.0-compatible syntax** (no string interpolation or inline `out` variable declarations).
+
+To run an example, select its project in Solution Explorer, choose **Set as StartUp Project**, then press **F5**. The .NET Framework 4.0 targeting pack/developer tools must be installed.
