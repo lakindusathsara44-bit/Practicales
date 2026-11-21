@@ -366,6 +366,70 @@ namespace WinFormsPractical06
       ["?: (conditional operator)", "Chooses one value depending on whether the condition is true or false."]
     ],
     output: "Select Weekend, tick C# and Web Design, then click Show Choices. The result shows “Time: Weekend | Subjects: C# Web Design”."
+  },
+  {
+    "id": "week1-hello-world",
+    "title": "Week 1 — Hello World Button and Label",
+    "level": "BEGINNER · HNDIT1012 WEEK 1",
+    "goal": "Create a Windows Forms application with a Button and a Label. When the user clicks the button, the label text changes to Hello World!.",
+    "code": "using System;\nusing System.Drawing;\nusing System.Windows.Forms;\n\nnamespace Week1HelloWorld\n{\n    public class Program\n    {\n        [STAThread]\n        public static void Main()\n        {\n            Application.EnableVisualStyles();\n            Application.SetCompatibleTextRenderingDefault(false);\n            Application.Run(new Form1());\n        }\n    }\n\n    public class Form1 : Form\n    {\n        private Button btnClickThis;\n        private Label lblHelloWorld;\n\n        public Form1()\n        {\n            Text = \"HelloWorld\";\n            StartPosition = FormStartPosition.CenterScreen;\n            ClientSize = new Size(420, 220);\n\n            btnClickThis = new Button();\n            btnClickThis.Name = \"btnClickThis\";\n            btnClickThis.Text = \"Click this\";\n            btnClickThis.Location = new Point(145, 55);\n            btnClickThis.Size = new Size(120, 32);\n            btnClickThis.Click += btnClickThis_Click;\n\n            lblHelloWorld = new Label();\n            lblHelloWorld.Name = \"lblHelloWorld\";\n            lblHelloWorld.Text = \"label1\";\n            lblHelloWorld.AutoSize = true;\n            lblHelloWorld.Location = new Point(165, 110);\n\n            Controls.Add(btnClickThis);\n            Controls.Add(lblHelloWorld);\n        }\n\n        private void btnClickThis_Click(object sender, EventArgs e)\n        {\n            lblHelloWorld.Text = \"Hello World!\";\n        }\n    }\n}",
+    "explanation": [
+      [
+        "Button",
+        "A Windows Forms control that the user can click."
+      ],
+      [
+        "Label",
+        "Displays text on the form."
+      ],
+      [
+        "Name",
+        "The control's identifier used in the C# code."
+      ],
+      [
+        "btnClickThis.Click += btnClickThis_Click;",
+        "Connects the button's Click event to the event-handler method."
+      ],
+      [
+        "lblHelloWorld.Text = \"Hello World!\";",
+        "Changes the label text after the button is clicked."
+      ]
+    ],
+    "output": "The form opens with a “Click this” button and a label. Clicking the button changes the label to “Hello World!”."
+  },
+  {
+    "id": "week2-calculator",
+    "title": "Week 2 — Simple Calculator",
+    "level": "BEGINNER · HNDIT1012 WEEK 2",
+    "goal": "Use TextBox, Label and Button controls with Click events to perform addition, subtraction, multiplication and division.",
+    "code": "using System;\nusing System.Drawing;\nusing System.Windows.Forms;\n\nnamespace Week2Calculator\n{\n    public class Program\n    {\n        [STAThread]\n        public static void Main()\n        {\n            Application.EnableVisualStyles();\n            Application.SetCompatibleTextRenderingDefault(false);\n            Application.Run(new Form1());\n        }\n    }\n\n    public class Form1 : Form\n    {\n        private TextBox txtNum1;\n        private TextBox txtNum2;\n        private TextBox txtResult;\n        private Button btnPlus;\n        private Button btnMinus;\n        private Button btnMul;\n        private Button btnDiv;\n\n        public Form1()\n        {\n            Text = \"Simple Calculator\";\n            StartPosition = FormStartPosition.CenterScreen;\n            ClientSize = new Size(430, 270);\n\n            Label lblNum1 = new Label();\n            lblNum1.Text = \"Number 1\";\n            lblNum1.Location = new Point(25, 28);\n            lblNum1.AutoSize = true;\n\n            Label lblNum2 = new Label();\n            lblNum2.Text = \"Number 2\";\n            lblNum2.Location = new Point(25, 68);\n            lblNum2.AutoSize = true;\n\n            Label lblResult = new Label();\n            lblResult.Text = \"Result\";\n            lblResult.Location = new Point(25, 108);\n            lblResult.AutoSize = true;\n\n            txtNum1 = new TextBox();\n            txtNum1.Name = \"txtNum1\";\n            txtNum1.Location = new Point(115, 24);\n            txtNum1.Width = 250;\n\n            txtNum2 = new TextBox();\n            txtNum2.Name = \"txtNum2\";\n            txtNum2.Location = new Point(115, 64);\n            txtNum2.Width = 250;\n\n            txtResult = new TextBox();\n            txtResult.Name = \"txtResult\";\n            txtResult.Location = new Point(115, 104);\n            txtResult.Width = 250;\n            txtResult.ReadOnly = true;\n\n            btnPlus = CreateButton(\"btnPlus\", \"+\", 25);\n            btnMinus = CreateButton(\"btnMinus\", \"-\", 115);\n            btnMul = CreateButton(\"btnMul\", \"X\", 205);\n            btnDiv = CreateButton(\"btnDiv\", \"/\", 295);\n\n            btnPlus.Click += btnPlus_Click;\n            btnMinus.Click += btnMinus_Click;\n            btnMul.Click += btnMul_Click;\n            btnDiv.Click += btnDiv_Click;\n\n            Controls.AddRange(new Control[] {\n                lblNum1, lblNum2, lblResult,\n                txtNum1, txtNum2, txtResult,\n                btnPlus, btnMinus, btnMul, btnDiv\n            });\n        }\n\n        private Button CreateButton(string name, string text, int x)\n        {\n            Button button = new Button();\n            button.Name = name;\n            button.Text = text;\n            button.Location = new Point(x, 165);\n            button.Size = new Size(75, 36);\n            return button;\n        }\n\n        private void btnPlus_Click(object sender, EventArgs e)\n        {\n            int num1 = Int32.Parse(txtNum1.Text);\n            int num2 = Int32.Parse(txtNum2.Text);\n            int result = num1 + num2;\n            txtResult.Text = result.ToString();\n        }\n\n        private void btnMinus_Click(object sender, EventArgs e)\n        {\n            int num1 = Int32.Parse(txtNum1.Text);\n            int num2 = Int32.Parse(txtNum2.Text);\n            int result = num1 - num2;\n            txtResult.Text = result.ToString();\n        }\n\n        private void btnMul_Click(object sender, EventArgs e)\n        {\n            int num1 = Int32.Parse(txtNum1.Text);\n            int num2 = Int32.Parse(txtNum2.Text);\n            int result = num1 * num2;\n            txtResult.Text = result.ToString();\n        }\n\n        private void btnDiv_Click(object sender, EventArgs e)\n        {\n            int num1 = Int32.Parse(txtNum1.Text);\n            int num2 = Int32.Parse(txtNum2.Text);\n            int result = num1 / num2;\n            txtResult.Text = result.ToString();\n        }\n    }\n}",
+    "explanation": [
+      [
+        "TextBox",
+        "Accepts the two input numbers and displays the result."
+      ],
+      [
+        "Label",
+        "Identifies each input and the result field."
+      ],
+      [
+        "Button Click event",
+        "Runs the matching event-handler when an operation button is clicked."
+      ],
+      [
+        "Int32.Parse(txtNum1.Text)",
+        "Converts the text entered by the user into an integer."
+      ],
+      [
+        "+, -, * and /",
+        "Arithmetic operators for addition, subtraction, multiplication and division."
+      ],
+      [
+        "result.ToString()",
+        "Converts the calculated integer back into text for the result TextBox."
+      ]
+    ],
+    "output": "Enter 12 and 3. The buttons display 15, 9, 36 and 4 for +, −, × and ÷ respectively. The example uses integer division."
   }
 ];
 
@@ -1381,8 +1445,8 @@ function renderCSharp() {
   const index = Math.max(0, csharpLessons.findIndex((item) => item.id === selectedCSharp));
   const lesson = csharpLessons[index];
   return breadcrumbs("C# Practicals") + `
-    <section class="lesson-hero violet"><div class="lesson-icon">⌘</div><div><div class="eyebrow">VISUAL APPLICATION · PRACTICAL NOTES</div><h1>C# Windows Forms</h1><p>Six practical examples with complete code, explanations and expected Windows application outputs.</p></div></section>
-    <div class="csharp-progress"><div><strong>Part 01</strong><span>Windows Forms fundamentals</span></div><span class="lesson-count">6 PRACTICALS</span></div>
+    <section class="lesson-hero violet"><div class="lesson-icon">⌘</div><div><div class="eyebrow">VISUAL APPLICATION · PRACTICAL NOTES</div><h1>C# Windows Forms</h1><p>Eight practical examples, including HNDIT1012 Week 1 and Week 2, with complete code and explanations.</p></div></section>
+    <div class="csharp-progress"><div><strong>Part 01</strong><span>Windows Forms fundamentals</span></div><span class="lesson-count">${csharpLessons.length} PRACTICALS</span></div>
     <div class="lesson-layout">
       <aside class="lesson-sidebar csharp-sidebar"><span class="sidebar-label">PRACTICAL LIST</span>
         ${csharpLessons.map((item, i) => `<button data-csharp="${item.id}" class="sidebar-item ${item.id === lesson.id ? "selected" : ""}"><span class="lesson-number">${String(i+1).padStart(2,"0")}</span><span>${escapeHTML(item.title)}</span></button>`).join("")}
