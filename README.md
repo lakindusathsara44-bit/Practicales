@@ -5,7 +5,7 @@ A lightweight practical-learning website built with **HTML, CSS and vanilla Java
 ## Pages
 
 - Home dashboard
-- C# Windows Forms practicals — six examples with source code, explanations and illustrative output previews
+- C# Windows Forms practicals — six original examples plus HNDIT1012 Week 1 and Week 2 lessons with source code and explanations
 - Web Design practicals — six HTML topics with attributes, complete examples and live browser previews
 
 ## Run locally
@@ -33,6 +33,10 @@ The C# Console section contains six guided examples: Hello World, variables and 
 
 The Web Design section includes modern `iframe` usage, historical `frameset` syntax (clearly marked obsolete), HTML form controls, form and input attributes, standard input types, validation, accessibility and security notes. The examples are for learning; server-side validation is still required for real submissions.
 
+
+## HNDIT1012 Week 1 and Week 2 Windows Forms projects
+
+Open `CSharp/WindowsFormsPracticals.sln` in Visual Studio on Windows. It contains the Week 1 Hello World Button/Label project and the Week 2 four-operation calculator. These lessons are also available in the C# Windows Forms section of the website.
 
 ## Visual Studio 2010 / C# 4.0 projects
 
