@@ -1,0 +1,85 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsPractical01", "CSharp/WinForms/WinFormsPractical01\WinFormsPractical01.csproj", "{A1000001-2010-4C00-9000-B00000000001}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsolePractical01", "CSharp/Console/ConsolePractical01\ConsolePractical01.csproj", "{A1000002-2010-4C00-9000-B00000000002}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsPractical02", "CSharp/WinForms/WinFormsPractical02\WinFormsPractical02.csproj", "{A1000003-2010-4C00-9000-B00000000003}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsolePractical02", "CSharp/Console/ConsolePractical02\ConsolePractical02.csproj", "{A1000004-2010-4C00-9000-B00000000004}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsPractical03", "CSharp/WinForms/WinFormsPractical03\WinFormsPractical03.csproj", "{A1000005-2010-4C00-9000-B00000000005}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsolePractical03", "CSharp/Console/ConsolePractical03\ConsolePractical03.csproj", "{A1000006-2010-4C00-9000-B00000000006}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsPractical04", "CSharp/WinForms/WinFormsPractical04\WinFormsPractical04.csproj", "{A1000007-2010-4C00-9000-B00000000007}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsolePractical04", "CSharp/Console/ConsolePractical04\ConsolePractical04.csproj", "{A1000008-2010-4C00-9000-B00000000008}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsPractical05", "CSharp/WinForms/WinFormsPractical05\WinFormsPractical05.csproj", "{A1000009-2010-4C00-9000-B00000000009}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsolePractical05", "CSharp/Console/ConsolePractical05\ConsolePractical05.csproj", "{A100000A-2010-4C00-9000-B0000000000A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsPractical06", "CSharp/WinForms/WinFormsPractical06\WinFormsPractical06.csproj", "{A100000B-2010-4C00-9000-B0000000000B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsolePractical06", "CSharp/Console/ConsolePractical06\ConsolePractical06.csproj", "{A100000C-2010-4C00-9000-B0000000000C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1000001-2010-4C00-9000-B00000000001}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1000001-2010-4C00-9000-B00000000001}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1000001-2010-4C00-9000-B00000000001}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1000001-2010-4C00-9000-B00000000001}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1000002-2010-4C00-9000-B00000000002}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1000002-2010-4C00-9000-B00000000002}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1000002-2010-4C00-9000-B00000000002}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1000002-2010-4C00-9000-B00000000002}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1000003-2010-4C00-9000-B00000000003}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1000003-2010-4C00-9000-B00000000003}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1000003-2010-4C00-9000-B00000000003}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1000003-2010-4C00-9000-B00000000003}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1000004-2010-4C00-9000-B00000000004}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1000004-2010-4C00-9000-B00000000004}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1000004-2010-4C00-9000-B00000000004}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1000004-2010-4C00-9000-B00000000004}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1000005-2010-4C00-9000-B00000000005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1000005-2010-4C00-9000-B00000000005}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1000005-2010-4C00-9000-B00000000005}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1000005-2010-4C00-9000-B00000000005}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1000006-2010-4C00-9000-B00000000006}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1000006-2010-4C00-9000-B00000000006}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1000006-2010-4C00-9000-B00000000006}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1000006-2010-4C00-9000-B00000000006}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1000007-2010-4C00-9000-B00000000007}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1000007-2010-4C00-9000-B00000000007}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1000007-2010-4C00-9000-B00000000007}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1000007-2010-4C00-9000-B00000000007}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1000008-2010-4C00-9000-B00000000008}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1000008-2010-4C00-9000-B00000000008}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1000008-2010-4C00-9000-B00000000008}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1000008-2010-4C00-9000-B00000000008}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1000009-2010-4C00-9000-B00000000009}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1000009-2010-4C00-9000-B00000000009}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1000009-2010-4C00-9000-B00000000009}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1000009-2010-4C00-9000-B00000000009}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A100000A-2010-4C00-9000-B0000000000A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A100000A-2010-4C00-9000-B0000000000A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A100000A-2010-4C00-9000-B0000000000A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A100000A-2010-4C00-9000-B0000000000A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A100000B-2010-4C00-9000-B0000000000B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A100000B-2010-4C00-9000-B0000000000B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A100000B-2010-4C00-9000-B0000000000B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A100000B-2010-4C00-9000-B0000000000B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A100000C-2010-4C00-9000-B0000000000C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A100000C-2010-4C00-9000-B0000000000C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A100000C-2010-4C00-9000-B0000000000C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A100000C-2010-4C00-9000-B0000000000C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

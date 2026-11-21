@@ -3,25 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#071426">
-  <meta name="description" content="HNDIT1012 Visual Application Programming — C# Windows Forms practicals based on Week 1 and Week 2 class presentations.">
-  <title>Practicales | Windows Forms Practicals</title>
+  <meta name="theme-color" content="#081326">
+  <meta name="description" content="Practicales — learn through guided C# and Web Design practicals.">
+  <title>Practicales | Learn by doing</title>
   <link rel="stylesheet" href="./styles.css">
   <script src="./app.js" defer></script>
 </head>
 <body>
-  <div class="site-shell">
+  <div class="app">
     <header class="topbar">
-      <a class="brand" href="#home" aria-label="Practicales home"><span class="brand-icon">P</span><span>practicales<span class="brand-dot">.</span></span></a>
-      <nav class="main-nav" aria-label="Main navigation">
-        <a href="#home" data-nav="home">Overview</a>
-        <a href="#week1" data-nav="week1">Week 1</a>
-        <a href="#week2" data-nav="week2">Week 2</a>
+      <a href="#/" class="brand"><span class="brand-mark" aria-hidden="true">▱</span><span>practicales<span class="brand-dot">.</span></span></a>
+      <nav class="top-nav" aria-label="Main navigation">
+        <a href="#/" class="nav-link" data-route="/">Home</a>
+        <a href="#/csharp" class="nav-link" data-route="/csharp">C# Practicals</a>
+        <a href="#/csharp-console" class="nav-link" data-route="/csharp-console">C# Console</a>
+        <a href="#/web-design" class="nav-link" data-route="/web-design">Web Design Practicals</a>
       </nav>
-      <span class="course-tag">HNDIT1012</span>
+      <div class="top-status"><span class="status-dot"></span> Learning space</div>
     </header>
-    <main id="app" tabindex="-1"></main>
-    <footer class="footer"><span>Practicales</span><span>HNDIT1012 · Visual Application Programming</span></footer>
+    <main id="page" class="page-shell" aria-live="polite"></main>
+    <footer class="footer"><span>Practicales</span><span>Learn it. Code it. Understand it.</span></footer>
   </div>
 </body>
 </html>
